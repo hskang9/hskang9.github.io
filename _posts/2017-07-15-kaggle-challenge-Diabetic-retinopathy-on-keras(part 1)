@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "Kaggle Challenge Diabetic Retinopathy on Keras"
+date:   2017-07-15 17:27:00
+categories: ML
+tags: [datascience, ML/DL]
+---
+
+# Note: This is for Amazon EC2 VM with GPU support.
+
+
+# 1. Download data (on command-line)
+  
+  Since Amazon EC2 does not provide screen to download data from Kaggle, we will use command line to download data.
+  
+  What we need is:
+  
+   - Cookie(for keeping sessions while downloading data)
+   
+   - 
