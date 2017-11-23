@@ -24,7 +24,7 @@ tags: [Deep Learning, Machine Learning, Keras]
 >“codenamed Inception, which derives its name from the Network in network paper by Lin et al [12](https://scholar.google.com/citations?user=BGONmkIAAAAJ&hl=en)
 in conjunction with the famous “we need to go deeper” internet meme [1](http://knowyourmeme.com/memes/we-need-to-go-deeper)” <cite>― Inventors of inception module</cite>
 
-{% include image_caption.html imageurl="/images/posts/whattochoose.png" title="weneedtogodeeper" caption="문제의 그 짤" %}
+{% include image_caption.html imageurl="/images/posts/weneedtogodeeper.png" title="weneedtogodeeper" caption="문제의 그 짤" %}
 
 ## 구조 
 
