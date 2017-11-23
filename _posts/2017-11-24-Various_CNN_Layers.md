@@ -35,17 +35,22 @@ in conjunction with the famous “we need to go deeper” internet meme [1](http
 
 ```python
 from tensorflow.contrib.keras.python import keras as keras
-from keras.layers import Conv2D, MaxPooling2D, AveragePooling2D, concatenate
+from keras.layers import Conv2D, MaxPooling2D, AveragePooling2D, concatenate, Input
+from keras import models
 
 def inception_block(input_layer, filter1=64, filter2=128, filter3=32):
     conv1x1 = Conv2D(filter1, kernel_size=(1,1), padding='same')(input_layer)
     conv3x3 = Conv2D(filter2, kernel_size=(3,3), padding='same')(input_layer)
     conv5x5 = Conv2D(filter3, kernel_size=(5,5), padding='same')(input_layer)
-    pool_proj = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_layer)
+    pooling = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_layer)
    #Average pooling은 평균값을 구하여 줄여주나 연산량을 많이 요구한다.
    #pooling = AveragePooling2D((3,3), strides=(1,1), padding='same')(input_layer)
-    output_layer = concatenate([conv1x1, conv3x3, conv5x5, pool_proj])
+    output_layer = concatenate([conv1x1, conv3x3, conv5x5, pooling])
     return output_layer
+
+shape = (28,28,1)
+inputs = Input(shape)
+model = models.Model(input=inputs, output=num_classes)
 ```
 
 ### dimension reduction
@@ -55,18 +60,24 @@ def inception_block(input_layer, filter1=64, filter2=128, filter3=32):
 ```python
 from tensorflow.contrib.keras.python import keras as keras
 from keras.layers import Conv2D, MaxPooling2D, AveragePooling2D, concatenate
+from keras import models
 
-def inception_block_dim_reduce(input_layer, filter1, filter2, filter3, filter4):
+def inception_block_dim_reduce(input_layer, filter1, filter2, filter3, reduce1, reduce2, pool_proj):
     conv1x1 = Conv2D(filter1, kernel_size=(1,1), padding='same')(input_layer)
-    conv3x3_reduce = Conv2D(filter2, kernel_size=(1,1), padding='same')(input_layer)
-    conv3x3_reduce = Conv2D(filter2, kernel_size=(3,3), padding='same')(conv1x1_reduce)
-    conv5x5_reduce = Conv2D(filter3, kernel_size=(1,1), padding='same')(input_layer)
-    conv5x5_reduce = Conv2D(filter3, kernel_size=(5,5), padding='same')(conv5x5_reduce)
-    pool_proj = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_layer)
-    pool_proj = Conv2D(filter4, kernel_size=(1,1), padding='same')(pool_proj)
-    output_layer = concatenate([conv1x1, conv3x3_reduce, conv5x5_reduce, pool_proj])
+    conv3x3_reduce = Conv2D(reduce1, kernel_size=(1,1), padding='same')(input_layer)
+    conv3x3 = Conv2D(filter2, kernel_size=(3,3), padding='same')(conv1x1_reduce)
+    conv5x5_reduce = Conv2D(reduce2, kernel_size=(1,1), padding='same')(input_layer)
+    conv5x5 = Conv2D(filter3, kernel_size=(5,5), padding='same')(conv5x5_reduce)
+    pooling = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_layer)
+    pool_proj = Conv2D(pool_proj, kernel_size=(1,1), padding='same')(pooling)
+    output_layer = concatenate([conv1x1, conv3x3, conv5x5, pool_proj])
     return output_layer
+    
+shape = (28,28,1)
+inputs = Input(shape)
+model = models.Model(input=inputs, output=num_classes)
 ```
+[googlenet]()
 
 ## 결론
 - padding에서 'same'옵션은 서로 다른 케이스의 레이어들을 합칠 때 쓰인다.
