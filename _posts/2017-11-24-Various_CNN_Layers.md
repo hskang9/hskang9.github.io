@@ -17,7 +17,7 @@ tags: [Deep Learning, Machine Learning, Keras]
 
 물론 각 레이어마다 신경망의 정확도를 높이는 데 기여를 하기는 했지만 어느 쪽이 좀 더 효과적인지에 대해 고민하고 있었는데...
 
-{% include image_caption.html imageurl="/images/posts/whattochoose.png" title="whattochoose" caption="모두 도움이 되긴 하지만 고르라고 하니 고민된다." %}!
+{% include image_caption.html imageurl="/images/posts/whattochoose.png" title="whattochoose" caption="모두 도움이 되긴 하지만 고르라고 하니 고민된다." %}
 
 구글의 연구자들은 고민을 하다가 Min Lin의 논문인 [Network in Network](https://arxiv.org/abs/1312.4400)를 읽게 되고 2010년에 개봉한 영화인 인셉션 meme "we need to go deeper"를 떠올리며 그냥 레이어들을 합쳐버리기로 결심한다.<strike>네...?</strike>
 
@@ -25,6 +25,10 @@ tags: [Deep Learning, Machine Learning, Keras]
 in conjunction with the famous “we need to go deeper” internet meme [1](http://knowyourmeme.com/memes/we-need-to-go-deeper)” <cite>― Inventors of inception module</cite>
 
 {% include image_caption.html imageurl="/images/posts/whattochoose.png" title="weneedtogodeeper" caption="문제의 그 짤" %}
+
+
+## 결론
+
 
 ## Reference
 - [Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842)
