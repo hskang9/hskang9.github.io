@@ -26,7 +26,26 @@ in conjunction with the famous “we need to go deeper” internet meme [1](http
 
 {% include image_caption.html imageurl="/images/posts/weneedtogodeeper.png" title="weneedtogodeeper" caption="문제의 그 짤" %}
 
-## 구조 
+## 구조
+
+### naive version(간단한 버전)
+
+{% include image_caption.html imageurl="/images/posts/inception_block_naive.png" title="weneedtogodeeper" caption="Inception Module, naive version" %}
+
+```python
+from tensorflow.contrib.keras.python import keras as keras
+from keras.layers import Conv2D, MaxPooling2D, concatenate
+
+def inception_block(input_layer, filter1=64, filter2=128, filter3=32):
+    conv1x1 = Conv2D(filter1, kernel_size=(1,1), padding='same')(input_layer)
+    conv3x3 = Conv2D(filter2, kernel_size=(3,3), padding='same')(input_layer)
+    conv5x5 = Conv2D(filter3, kernel_size=(5,5), padding='same')(input_layer)
+    pooling = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_layer)
+    output_layer = concatenate([conv1x1, conv3x3, conv5x5, pooling])
+    return output_layer
+'''
+
+
 
 ## 결론
 - padding에서 'same'옵션은 서로 다른 케이스의 레이어들을 합칠 때 쓰인다.
