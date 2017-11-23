@@ -95,4 +95,4 @@ model = models.Model(input=inputs, output=num_classes)
 여러가지 합성곱 신경망 레이어들 - Xception
 
 ## 앞으로 연재 계획
-1~2개월에 한번씩 연재합니다. 그동안 implementation한 케이스가 있다면 그룹에 공유해주셨으면 합니다.
+1~2개월에 한번씩 연재합니다. 그동안 한 케이스가 있다면 그룹에 공유해주셨으면 합니다.
