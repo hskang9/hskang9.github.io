@@ -31,3 +31,7 @@ in conjunction with the famous “we need to go deeper” internet meme [1](http
 - [Udacity](www.udacity.com)
 
 {% include advertisements.html %}
+
+## 다음 편 예고
+이렇듯 뭐든지 합쳐서 넣어버리는 <strike>연산량 노답</strike> 인셉션 레이어에 의해 처리해야 할 패러미터는 기하급수적으로 늘어나게 되고 연산량이 많아지면서 전 구글 엔지니어이자 케라스 창시자인 Franc¸ois Chollet은 좀 더 효율적인 컨볼루션 신경망에 대해 고려하게 되는데...
+여러가지 합성곱 신경망 레이어들 - Xception
