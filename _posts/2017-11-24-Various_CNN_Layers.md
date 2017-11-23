@@ -43,7 +43,7 @@ def inception_block(input_layer, filter1=64, filter2=128, filter3=32):
     pooling = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_layer)
     output_layer = concatenate([conv1x1, conv3x3, conv5x5, pooling])
     return output_layer
-'''
+```
 
 
 
