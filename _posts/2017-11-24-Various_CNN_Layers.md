@@ -55,7 +55,7 @@ model = models.Model(input=inputs, output=num_classes)
 
 ### dimension reduction
 
-{% include image_caption.html imageurl="/images/posts/inception_block_naive.png" title="" caption="Inception Module, naive version" %}
+{% include image_caption.html imageurl="/images/posts/inception_block_reduce.png" title="" caption="Inception Module, naive version" %}
 
 ```python
 from tensorflow.contrib.keras.python import keras as keras
