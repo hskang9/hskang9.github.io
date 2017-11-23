@@ -26,8 +26,11 @@ in conjunction with the famous “we need to go deeper” internet meme [1](http
 
 {% include image_caption.html imageurl="/images/posts/whattochoose.png" title="weneedtogodeeper" caption="문제의 그 짤" %}
 
+## 구조 
 
 ## 결론
+- padding에서 'same'옵션은 서로 다른 케이스의 레이어들을 합칠 때 쓰인다.
+- 짤은 21세기의 명화다. 짤을 감상하며 영감을 얻도록 하자.
 
 
 ## Reference
@@ -39,3 +42,5 @@ in conjunction with the famous “we need to go deeper” internet meme [1](http
 ## 다음 편 예고
 이렇듯 뭐든지 합쳐서 넣어버리는 <strike>연산량 노답</strike> 인셉션 레이어에 의해 처리해야 할 패러미터는 기하급수적으로 늘어나게 되고 연산량이 많아지면서 전 구글 엔지니어이자 케라스 창시자인 Francois Chollet은 좀 더 효율적인 컨볼루션 신경망에 대해 고려하게 되는데...
 여러가지 합성곱 신경망 레이어들 - Xception
+
+## 앞으로 연재 
