@@ -2,7 +2,7 @@
 layout: page
 title: About this blog
 description: An optional about page for BlogBox Jekyll theme
-featured_image: aboutPage.png
+featured_image: aboutPage.jpg
 ---
 
 My name is Hyungsuk Kang. I’m a student in Sungkyunkwan University and graduate of Udacity Machine learning nanodegree.
