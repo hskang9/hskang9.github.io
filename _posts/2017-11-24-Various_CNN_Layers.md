@@ -16,6 +16,7 @@ tags: [Deep Learning, Machine Learning, Keras]
 
 
 물론 각 레이어마다 신경망의 정확도를 높이는 데 기여를 하기는 했지만 어느 쪽이 좀 더 효과적인지에 대해 고민하고 있었는데...
+<!--more-->
 
 {% include image_caption.html imageurl="/images/posts/whattochoose.png" title="whattochoose" caption="모두 도움이 되긴 하지만 고르라고 하니 고민된다." %}
 
