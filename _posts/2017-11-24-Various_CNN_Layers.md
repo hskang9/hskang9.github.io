@@ -64,7 +64,7 @@ from tensorflow.contrib.keras.python import keras as keras
 from keras.layers import Conv2D, MaxPooling2D, AveragePooling2D, concatenate
 from keras import models
 
-def inception_block_dim_reduce(input_layer, filter1, filter2, filter3, reduce1, reduce2, pool_proj, activation='relu'):
+def inception_block_dim_reduce(input_layer, filter1, filter2, filter3, reduce1, reduce2, pool_proj, activation='relu', pull=False):
     conv1x1 = Conv2D(filter1, kernel_size=(1,1), padding='same', activation=activation)(input_layer)
     conv3x3_reduce = Conv2D(reduce1, kernel_size=(1,1), padding='same', activation=activation)(input_layer)
     conv3x3 = Conv2D(filter2, kernel_size=(3,3), padding='same', activation=activation)(conv1x1_reduce)
@@ -73,6 +73,11 @@ def inception_block_dim_reduce(input_layer, filter1, filter2, filter3, reduce1, 
     pooling = MaxPooling2D((3,3), strides=(1,1), padding='same', activation=activation)(input_layer)
     pool_proj = Conv2D(pool_proj, kernel_size=(1,1), padding='same', activation=activation)(pooling)
     output_layer = concatenate([conv1x1, conv3x3, conv5x5, pool_proj])
+    
+    # Googlenet exracts pool_proj in order to ensemble in three cases
+    if pull == True:
+        return output_layer, pool_proj
+    
     return output_layer
     
 shape = (224,224,3)
