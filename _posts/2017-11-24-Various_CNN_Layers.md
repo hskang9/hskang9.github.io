@@ -124,7 +124,6 @@ GoogLeNet의 구조가 깊어서 그런지 vanishing gradient 문제를 걱정�
 - [Udacity](www.udacity.com)
 - [googlenet in keras](http://joelouismarino.github.io/blog_posts/blog_googlenet_keras.html)
 
-{% include advertisements.html %}
 
 ## 다음 
 전 구글 엔지니어이자 케라스 창시자인 Francois Chollet은 좀 더 효율적으로 패러미터를 생성하는 합성곱 신경망에 대해 고려하게 된다.
@@ -132,4 +131,6 @@ GoogLeNet의 구조가 깊어서 그런지 vanishing gradient 문제를 걱정�
 여러가지 합성곱 신경망 레이어들 - Xception
 
 ## 앞으로 연재 계획
-1~2개월에 한번씩 올립니다. 그동안 신경망을 적용한 케이스가 있다면 케라스 코리아에 공유해주셨으면 합니다.
+1~2개월에 한번씩 올립니다. 그동안 신경망 예제를 적용하여 성능을 비교해보거나, 만든 프로젝트를 적용한 케이스가 있다면 케라스 코리아에 공유해주셨으면 합니다.
+
+{% include advertisements.html %}
