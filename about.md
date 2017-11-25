@@ -5,7 +5,7 @@ description: An optional about page for BlogBox Jekyll theme
 featured_image: aboutPage.jpg
 ---
 
-My name is Hyungsuk Kang. I’m a student in Sungkyunkwan University and graduate of Udacity Machine learning nanodegree.
+My name is Hyungsuk Kang. I’m a student in Sungkyunkwan University and graduate of Udacity Machine learning nanodegree and Robotics Nanodegree, term 1.
 
 Welcome to my blog and I absolutely appreciate you stopping by! I talk about my solution to kaggle competitions knowhows, and tutorials so that I can remember what I studied.
 
