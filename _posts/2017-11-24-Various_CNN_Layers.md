@@ -20,7 +20,7 @@ tags: [Deep Learning, Machine Learning, Keras]
 
 {% include image_caption.html imageurl="/images/posts/whattochoose.png" title="whattochoose" caption="모두 도움이 되긴 하지만 고르라고 하니 고민된다." %}
 
-구글의 연구자들은 고민을 하다가 Min Lin의 논문인 [Network in Network](https://arxiv.org/abs/1312.4400)를 읽게 되고 2010년에 개봉한 영화인 인셉션 meme(짤) "we need to go deeper"를 떠올리며 그냥 레이어들을 합쳐버리기로 결심한다.<strike>네...?</strike>
+구글의 연구자들은 고민을 하다가 Min Lin의 논문인 [Network in Network](https://arxiv.org/abs/1312.4400)를 읽게 되고 2010년에 개봉한 영화인 인셉션 meme(짤) "we need to go deeper"를 떠올리며 그냥 레이어들을 합쳐버리기로 결심한다.
 
 >“codenamed Inception, which derives its name from the Network in network paper by Lin et al [[12]](https://scholar.google.com/citations?user=BGONmkIAAAAJ&hl=en)
 in conjunction with the famous “we need to go deeper” internet meme [[1]](http://knowyourmeme.com/memes/we-need-to-go-deeper)” <cite>― Inventors of inception module</cite>
