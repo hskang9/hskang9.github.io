@@ -2,7 +2,7 @@
 layout: post
 title: '여러가지 합성곱 신경망 레이어들 - InceptionV1(Googlenet)'
 featured_image: inception.png
-categories: Cocoa/iOS
+categories: ML/DL
 tags: [Deep Learning, Machine Learning, Keras]
 ---
 
@@ -116,7 +116,7 @@ GoogLeNet의 구조가 깊어서 그런지 vanishing gradient 문제를 걱정�
 
 ## 결론
 - padding에서 'same' 옵션은 서로 다른 케이스의 레이어들을 합칠 때 쓰인다.
-- 짤은 21세기의 명화다. 짤을 감상하며 영감을 얻도록 하자.
+- 짤을 보며 영감을 얻을 수 있다.
 
 
 ## Reference
@@ -127,7 +127,7 @@ GoogLeNet의 구조가 깊어서 그런지 vanishing gradient 문제를 걱정�
 {% include advertisements.html %}
 
 ## 다음 편 예고
-전 구글 엔지니어이자 케라스 창시자인 Francois Chollet은 좀 더 효율적으로 패러미터를 생성하는 합성곱 신경망에 대해 고려하게 되는데...
+전 구글 엔지니어이자 케라스 창시자인 Francois Chollet은 좀 더 효율적으로 패러미터를 생성하는 합성곱 신경망에 대해 고려하게 됩니다.
 여러가지 합성곱 신경망 레이어들 - Xception
 
 ## 앞으로 연재 계획
