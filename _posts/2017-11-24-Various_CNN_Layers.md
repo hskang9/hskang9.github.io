@@ -126,8 +126,8 @@ GoogLeNet의 구조가 깊어서 그런지 vanishing gradient 문제를 걱정�
 
 
 ## 다음 
-전 구글 엔지니어이자 케라스 창시자인 Francois Chollet은 좀 더 효율적으로 패러미터를 생성하는 합성곱 신경망에 대해 고려하게 된다.
-이에 'Separable Convolution'을 발견하게 되는데...
+전 구글 엔지니어이자 케라스 창시자인 Francois Chollet은 좀 더 효율적으로 패러미터를 생성하는 합성곱 신경망에 대해 고려하게 된다. 이에 'Separable Convolution'을 발견하게 되는데...
+
 여러가지 합성곱 신경망 레이어들 - Xception
 
 ## 앞으로 연재 계획
