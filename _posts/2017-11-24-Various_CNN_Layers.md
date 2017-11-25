@@ -57,6 +57,8 @@ model = models.Model(input=inputs, output=output_layer)
 
 ### dimension reduction
 
+**Convolution1x1** 레이어를 이용하여 dimension을 줄여준다. 이를 실행한 결과 AlexNet보다 12배만큼 적은 패러미터로 훈련시킬 수 있었다.
+
 {% include image_caption.html imageurl="/images/posts/inception_block_reduce.png" title="" caption="Inception Module, naive version" %}
 
 ```python
@@ -86,24 +88,47 @@ inception_reduce_1 = inception_block(inputs, 64, 128, 32)
 # output_layer = Dense(64)(inception_reduce_1) 
 model = models.Model(input=inputs, output=output_layer)
 ```
-## Googlenet
+## GoogLeNet
 
-[googlenet]()
+![Googlenet_components](/images/posts/googlenet_components.png)
+
+GoogLeNet은 4가지 컴포넌트들로 이루어져 있다.
+
+### stem
+
+이 레이어는 다른 인셉션 모듈과 달리 순차적으로 패러미터들을 전파시킨다. stem이라는 이름은 후에 서술되는 v2,v3부터 언급되는데, 인셉션 모듈들만 사용한 모델 대신  stem 레이어를 넣었을 때 문제가 생긴다는 저자의 언급으로 보아, 사라질 위기에 처해있다.
+
+### inception modules
+
+이 레이어는 GoogLeNet을 만드는 데 있어서 가장 기초적인 블록이다. 합성곱 신경망과 pooling 레이어들로 이루어져 있으며, 각 케이스마다 수행된 뒤 depth를 축으로 합쳐진다. conv1x1으로 패러미터를 축소시킬 경우 적은 패러미터로 효과적인 학습을 가능하게 한다.
+
+### auxiliary classifiers
+
+GoogLeNet의 구조가 깊어서 그런지 vanishing gradient 문제를 걱정하던 연구진들은 중간 레이어들에 나오는 feature들로 구분하면 마지막 레이어보다 bias가 높은 판단을 내릴 것이라고 가정한 뒤 auxilary classifier를 두어 loss function에 위 구분자들의 loss값을 일정 부분 포함시킨다. 그러나 테스트 과정에서는 쓰지 않는다.
+
+## output classifiers
+최종 단계로서 이미지를 인식하는 부분을 담당한다. average pooling으로 패러미터를 줄인 뒤 softmax로 각 클래스일 확률을 구한다.
+
+## Implementation
+
+[Googlenet(Still working)](https://github.com/hskang9/Googlenet)
+
 
 ## 결론
-- padding에서 'same'옵션은 서로 다른 케이스의 레이어들을 합칠 때 쓰인다.
+- padding에서 'same' 옵션은 서로 다른 케이스의 레이어들을 합칠 때 쓰인다.
 - 짤은 21세기의 명화다. 짤을 감상하며 영감을 얻도록 하자.
 
 
 ## Reference
 - [Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842)
 - [Udacity](www.udacity.com)
+- [googlenet in keras](http://joelouismarino.github.io/blog_posts/blog_googlenet_keras.html)
 
 {% include advertisements.html %}
 
 ## 다음 편 예고
-이렇듯 뭐든지 합쳐서 넣어버리는 <strike>연산량 노답</strike> 인셉션 레이어에 의해 처리해야 할 패러미터는 기하급수적으로 늘어나게 되고 연산량이 많아지면서 전 구글 엔지니어이자 케라스 창시자인 Francois Chollet은 좀 더 효율적인 컨볼루션 신경망에 대해 고려하게 되는데...
+전 구글 엔지니어이자 케라스 창시자인 Francois Chollet은 좀 더 효율적으로 패러미터를 생성하는 합성곱 신경망에 대해 고려하게 되는데...
 여러가지 합성곱 신경망 레이어들 - Xception
 
 ## 앞으로 연재 계획
-1~2개월에 한번씩 니다. 그동안 신경망을 적용한 케이스가 있다면 케라스 코리아에 공유해주셨으면 합니다.
+1~2개월에 한번씩 올립니다. 그동안 신경망을 적용한 케이스가 있다면 케라스 코리아에 공유해주셨으면 합니다.
