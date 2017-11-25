@@ -42,7 +42,7 @@ def inception_block(input_layer, filter1=64, filter2=128, filter3=32, activation
     conv1x1 = Conv2D(filter1, kernel_size=(1,1), padding='same', activation=activation)(input_layer)
     conv3x3 = Conv2D(filter2, kernel_size=(3,3), padding='same', activation=activation)(input_layer)
     conv5x5 = Conv2D(filter3, kernel_size=(5,5), padding='same', activation=activation)(input_layer)
-    pooling = MaxPooling2D((3,3), strides=(1,1), padding='same', activation=activation)(input_layer)
+    pooling = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_layer)
    #Average pooling은 평균값을 구하여 줄여주나 연산량을 많이 요구한다.
    #pooling = AveragePooling2D((3,3), strides=(1,1), padding='same')(input_layer)
     output_layer = concatenate([conv1x1, conv3x3, conv5x5, pooling])
@@ -67,11 +67,11 @@ from keras import models
 def inception_block_dim_reduce(input_layer, filter1, filter2, filter3, reduce1, reduce2, pool_proj, activation='relu', pull=False):
     conv1x1 = Conv2D(filter1, kernel_size=(1,1), padding='same', activation=activation)(input_layer)
     conv3x3_reduce = Conv2D(reduce1, kernel_size=(1,1), padding='same', activation=activation)(input_layer)
-    conv3x3 = Conv2D(filter2, kernel_size=(3,3), padding='same', activation=activation)(conv1x1_reduce)
+    conv3x3 = Conv2D(filter2, kernel_size=(3,3), padding='same', activation=activation)(conv3x3_reduce)
     conv5x5_reduce = Conv2D(reduce2, kernel_size=(1,1), padding='same', activation=activation)(input_layer)
     conv5x5 = Conv2D(filter3, kernel_size=(5,5), padding='same', activation=activation)(conv5x5_reduce)
     pooling = MaxPooling2D((3,3), strides=(1,1), padding='same', activation=activation)(input_layer)
-    pool_proj = Conv2D(pool_proj, kernel_size=(1,1), padding='same', activation=activation)(pooling)
+    pool_proj = Conv2D(pool_proj, kernel_size=(1,1), padding='same')(pooling)
     output_layer = concatenate([conv1x1, conv3x3, conv5x5, pool_proj])
     
     # Googlenet exracts pool_proj in order to ensemble in three cases
@@ -104,4 +104,4 @@ model = models.Model(input=inputs, output=output_layer)
 여러가지 합성곱 신경망 레이어들 - Xception
 
 ## 앞으로 연재 계획
-1~2개월에 한번씩 연재합니다. 그동안 신경망을 적용한 케이스가 있다면 케라스 코리아에 공유해주셨으면 합니다.
+1~2개월에 한번씩 니다. 그동안 신경망을 적용한 케이스가 있다면 케라스 코리아에 공유해주셨으면 합니다.
