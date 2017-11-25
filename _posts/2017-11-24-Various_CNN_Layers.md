@@ -73,7 +73,7 @@ def inception_block_dim_reduce(input_layer, filter1, filter2, filter3, reduce1, 
     conv5x5_reduce = Conv2D(reduce2, kernel_size=(1,1), padding='same', activation=activation)(input_layer)
     conv5x5 = Conv2D(filter3, kernel_size=(5,5), padding='same', activation=activation)(conv5x5_reduce)
     pooling = MaxPooling2D((3,3), strides=(1,1), padding='same')(input_layer)
-    pool_proj = Conv2D(pool_proj, kernel_size=(1,1), padding='same')(pooling)
+    pool_proj = Conv2D(pool_proj, kernel_size=(1,1), padding='same', activation=activation)(pooling)
     output_layer = concatenate([conv1x1, conv3x3, conv5x5, pool_proj])
     
     # Googlenet exracts pool_proj in order to ensemble in three cases
