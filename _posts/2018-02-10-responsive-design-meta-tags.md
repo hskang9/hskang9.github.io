@@ -13,7 +13,7 @@ tags: [front_end, web_development]
 viewport란 사용하는 디바이스에서 웹앱이 사용할 수 있는 범위를 지정해주는 <meta> 태그입니다.
 이 <meta> 태그를 사용하면 다음 사항을 기기마다 css로 일일이 크기를 정해주지 않고도 웹 앱의 컨텐츠가 디바이스 스크린 양 옆으로 빠져나가는 것을 예방해줄 수 있습니다.
 
-{% include image_caption.html imageurl="/images/posts/contents_out.png" title="contents_out" caption="이런 거" %}
+{% include image_caption imageurl="/images/posts/contents_out.png" title="contents_out" caption="이런 거" %}
 
 
 ```html
