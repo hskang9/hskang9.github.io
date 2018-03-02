@@ -134,3 +134,5 @@ GoogLeNet의 구조가 깊어서 그런지 vanishing gradient 문제를 걱정�
 1~2개월에 한번씩 올립니다. 그동안 신경망 예제를 적용하여 성능을 비교해보거나, 만든 프로젝트를 적용한 케이스가 있다면 케라스 코리아에 공유해주셨으면 합니다.
 
 {% include advertisements.html %}
+
+{% donate %}
