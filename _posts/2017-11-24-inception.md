@@ -135,4 +135,4 @@ GoogLeNet의 구조가 깊어서 그런지 vanishing gradient 문제를 걱정�
 
 {% include advertisements.html %}
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](XVHCBH5SPX4DW)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](paypal.me/KangHyungsuk)
